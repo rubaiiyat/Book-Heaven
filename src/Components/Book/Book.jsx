@@ -2,10 +2,10 @@ import React from "react";
 import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 const Book = ({ book }) => {
-  const { image, tags, bookName, author, category, rating } = book;
+  const { bookId, image, tags, bookName, author, category, rating } = book;
   return (
     <div className="mt-10">
-      <Link to={"/bookdetails"}>
+      <Link to={`/bookDetails/${bookId}`}>
         <section class="p-8  bg-base-200    rounded-2xl min-h-[670px] flex-grow">
           <img className="rounded-2xl" src={image} alt="" />
           <div class="space-x-10 flex  mt-10">
