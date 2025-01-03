@@ -12,7 +12,14 @@ const BookDetails = () => {
 
   return (
     <div>
-      <h1></h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde corrupti
+        excepturi corporis nesciunt. Ducimus, vel aspernatur excepturi quis
+        nihil ea corporis et quam veritatis suscipit cumque numquam quaerat.
+        Quis quasi aspernatur repellat hic totam optio pariatur architecto
+        officia. Beatae ipsam hic delectus molestiae mollitia doloremque quia
+        distinctio deserunt dolore odit.
+      </h1>
     </div>
   );
 };
