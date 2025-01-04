@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-
+import getItems from "../Utilities/Local";
 const BookDetails = () => {
   const books = useLoaderData();
   const { id } = useParams();
@@ -19,7 +19,10 @@ const BookDetails = () => {
     yearOfPublishing,
     rating,
   } = book;
-  console.log(book);
+
+  const handleReadPost = () => {
+    getItems(parseInt(id));
+  };
 
   return (
     <div>
@@ -90,7 +93,12 @@ const BookDetails = () => {
               </div>
 
               <div className="flex gap-5">
-                <button className="btn btn-secondary">Read</button>
+                <button
+                  onClick={() => handleReadPost()}
+                  className="btn btn-secondary"
+                >
+                  Read
+                </button>
                 <button className="btn btn-accent">Wishlist</button>
               </div>
             </div>
