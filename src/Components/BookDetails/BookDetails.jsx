@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import getItems from "../Utilities/Local";
+import { saveItems } from "../Utilities/Local";
+
 const BookDetails = () => {
   const books = useLoaderData();
   const { id } = useParams();
@@ -21,7 +22,7 @@ const BookDetails = () => {
   } = book;
 
   const handleReadPost = () => {
-    getItems(parseInt(id));
+    saveItems(parseInt(id));
   };
 
   return (

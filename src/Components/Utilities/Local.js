@@ -18,4 +18,4 @@ const saveItems = (id) => {
   }
 };
 
-export default (getItems, saveItems);
+export { getItems, saveItems };
