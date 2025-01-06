@@ -22,9 +22,8 @@ const ListedBooks = () => {
           bookReads.push(book);
         }
 
-        setReadBooks(book);
-        setDisplayBooks(readBooks);
-
+        setReadBooks(bookReads);
+        setDisplayBooks(bookReads);
         console.log(book);
       }
     }
