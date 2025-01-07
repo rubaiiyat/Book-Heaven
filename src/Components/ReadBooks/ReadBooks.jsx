@@ -1,8 +1,10 @@
 import React from "react";
 import { FaLocationDot, FaUserGroup } from "react-icons/fa6";
 import { MdOutlineRestorePage } from "react-icons/md";
+import { Link } from "react-router-dom";
 const ReadBooks = ({ book }) => {
   const {
+    bookId,
     image,
     bookName,
     author,
@@ -63,7 +65,9 @@ const ReadBooks = ({ book }) => {
               <p className=" mb-1">Rating : {rating}</p>
             </div>
             <div className="">
-              <button className="btn btn-accent">View Details</button>
+              <Link to={`/bookDetails/${bookId}`}>
+                <button className="btn btn-accent">View Details</button>
+              </Link>
             </div>
           </div>
         </div>
