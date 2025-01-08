@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { saveItems } from "../Utilities/Local";
+import { saveWishListItems } from "../Utilities/LocalWishList";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -23,6 +24,10 @@ const BookDetails = () => {
 
   const handleReadPost = () => {
     saveItems(parseInt(id));
+  };
+
+  const handleWishList = () => {
+    saveWishListItems(parseInt(id));
   };
 
   return (
@@ -100,7 +105,12 @@ const BookDetails = () => {
                 >
                   Read
                 </button>
-                <button className="btn btn-accent">Wishlist</button>
+                <button
+                  onClick={() => handleWishList()}
+                  className="btn btn-accent"
+                >
+                  Wishlist
+                </button>
               </div>
             </div>
           </div>
