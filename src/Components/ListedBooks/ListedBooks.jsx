@@ -27,7 +27,6 @@ const ListedBooks = () => {
 
         setReadBooks(bookReads);
         setDisplayBooks(bookReads);
-        console.log(book);
       }
     }
 

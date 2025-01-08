@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { saveItems } from "../Utilities/Local";
 import { saveWishListItems } from "../Utilities/LocalWishList";
+import { ToastContainer, toast } from "react-toastify";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -23,11 +24,24 @@ const BookDetails = () => {
   } = book;
 
   const handleReadPost = () => {
-    saveItems(parseInt(id));
+    const isAdded = saveItems(parseInt(id));
+
+    if (isAdded) {
+      toast.success("Book added to Read list!");
+    } else {
+      toast.error("Book already exists in Read list!");
+    }
   };
 
   const handleWishList = () => {
-    saveWishListItems(parseInt(id));
+    const isAdded = saveWishListItems(parseInt(id));
+    if (isAdded) {
+      toast.success("Book added to Wishlist!");
+    } else {
+      toast.error(
+        "Book already added it Read List! You can't read and add wishlist again"
+      );
+    }
   };
 
   return (
@@ -105,6 +119,8 @@ const BookDetails = () => {
                 >
                   Read
                 </button>
+                <ToastContainer />
+
                 <button
                   onClick={() => handleWishList()}
                   className="btn btn-accent"
