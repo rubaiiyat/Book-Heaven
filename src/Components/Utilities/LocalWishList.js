@@ -15,7 +15,9 @@ const saveWishListItems = (id) => {
   if (!exist) {
     storedBook.push(id);
     localStorage.setItem("wishList-application", JSON.stringify(storedBook));
+    return true;
   }
+  return false;
 };
 
 export { getWishListItems, saveWishListItems };

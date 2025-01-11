@@ -15,7 +15,9 @@ const saveItems = (id) => {
   if (!exist) {
     storedBook.push(id);
     localStorage.setItem("book-application", JSON.stringify(storedBook));
+    return true;
   }
+  return false;
 };
 
 export { getItems, saveItems };
