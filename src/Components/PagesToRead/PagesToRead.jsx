@@ -33,7 +33,7 @@ const PagesToRead = ({ book }) => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center  p-4 bg-gray-800 rounded-lg">
+    <div className="flex justify-center items-center  p-4 bg-base-300 rounded-lg">
       {readBooks.length > 2 ? (
         <BarChart
           width={800}
